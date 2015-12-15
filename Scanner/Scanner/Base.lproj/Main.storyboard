@@ -1,25 +1,70 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fCN-3Y-DVW" userLabel="centerLineView">
+                                <rect key="frame" x="0.0" y="281" width="320" height="5"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="5" id="dEL-zM-J9N"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-NQ-fRb">
+                                <rect key="frame" x="60" y="131" width="200" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="ere-22-oLo"/>
+                                    <constraint firstAttribute="height" constant="120" id="q3C-1q-1kz"/>
+                                </constraints>
+                                <state key="normal" title="获取身份正面照"/>
+                                <connections>
+                                    <action selector="firstButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVL-ye-Mrz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifs-WM-2LB">
+                                <rect key="frame" x="60" y="316" width="200" height="120"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="lI9-CH-ZpO"/>
+                                    <constraint firstAttribute="height" constant="120" id="mXN-fG-df6"/>
+                                </constraints>
+                                <state key="normal" title="获取身份反面照"/>
+                                <connections>
+                                    <action selector="firstButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V8H-l7-Eab"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ifs-WM-2LB" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="25D-GS-1VH"/>
+                            <constraint firstItem="ifs-WM-2LB" firstAttribute="top" secondItem="fCN-3Y-DVW" secondAttribute="bottom" constant="30" id="6TO-OG-UVk"/>
+                            <constraint firstItem="fCN-3Y-DVW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="BFS-2j-D8s"/>
+                            <constraint firstAttribute="trailing" secondItem="fCN-3Y-DVW" secondAttribute="trailing" id="hEC-oO-z4I"/>
+                            <constraint firstItem="f3S-NQ-fRb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hFY-2s-rql"/>
+                            <constraint firstItem="fCN-3Y-DVW" firstAttribute="top" secondItem="f3S-NQ-fRb" secondAttribute="bottom" constant="30" id="pgw-J9-F8d"/>
+                            <constraint firstItem="fCN-3Y-DVW" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ue7-kb-dEC"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="280" y="296"/>
         </scene>
     </scenes>
 </document>
