@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "CDC315F2C1DD4B61EDB0663AAF919929A0C525DB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "31C043FEA1A84DEFAD916DBF8CCD0DF713FFA2F7" : 0,
+    "CDC315F2C1DD4B61EDB0663AAF919929A0C525DB" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "DB86E274-655B-428B-87CC-604D2C7CE718",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "31C043FEA1A84DEFAD916DBF8CCD0DF713FFA2F7" : "Scanner\/Scanner\/Scanner\/thirdLibrary\/Reader\/",
+    "CDC315F2C1DD4B61EDB0663AAF919929A0C525DB" : "Scanner\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Scanner",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Scanner\/Scanner.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/vfr\/Reader.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "31C043FEA1A84DEFAD916DBF8CCD0DF713FFA2F7"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/JianrongHui\/Scanner.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "CDC315F2C1DD4B61EDB0663AAF919929A0C525DB"
+    }
+  ]
+}

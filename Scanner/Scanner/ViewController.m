@@ -30,6 +30,12 @@ typedef NS_ENUM(NSInteger,EtakePhotoType) {
     _picker = [[UIImagePickerController alloc] init];
 }
 
+- (void)didReceiveMemoryWarning
+{
+    [super didReceiveMemoryWarning];
+    
+}
+
 #pragma mark - 点击事件
 
 - (IBAction)firstButtonAction:(UIButton *)sender {
@@ -80,9 +86,9 @@ typedef NS_ENUM(NSInteger,EtakePhotoType) {
         __weak typeof(self) weakSelf = self;
         [vc setTakePhotoCompleteBlock:^(NSString *imageFilePath) {
             if (type == eTakeFrontImage) {
-                [weakSelf.frontImageButton setBackgroundImage:[UIImage imageWithContentsOfFile:imageFilePath] forState:UIControlStateNormal];
+//                [weakSelf.frontImageButton setBackgroundImage:[UIImage imageWithContentsOfFile:imageFilePath] forState:UIControlStateNormal];
             } else {
-                [weakSelf.backImageButton setBackgroundImage:[UIImage imageWithContentsOfFile:imageFilePath] forState:UIControlStateNormal];
+//                [weakSelf.backImageButton setBackgroundImage:[UIImage imageWithContentsOfFile:imageFilePath] forState:UIControlStateNormal];
             }
         }];
         [self presentViewController:vc animated:YES completion:nil];
