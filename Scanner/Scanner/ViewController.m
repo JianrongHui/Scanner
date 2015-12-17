@@ -7,11 +7,18 @@
 //
 
 #import "ViewController.h"
+#import "HJRTakePhotoController.h"
+
+typedef NS_ENUM(NSInteger,EtakePhotoType) {
+    eTakeFrontImage = 0,
+    eTakeBackImage
+};
 
 @interface ViewController ()<UINavigationControllerDelegate,UIImagePickerControllerDelegate>
 
 @property (nonatomic, strong) UIImagePickerController *picker;
-//@property (nonatomic, strong) UIActionSheet
+@property (weak, nonatomic) IBOutlet UIButton *frontImageButton;
+@property (weak, nonatomic) IBOutlet UIButton *backImageButton;
 
 @end
 
@@ -25,7 +32,7 @@
 
 #pragma mark - 点击事件
 
-- (IBAction)firstButtonAction:(id)sender {
+- (IBAction)firstButtonAction:(UIButton *)sender {
     UIAlertController *alertController = [UIAlertController
                                           alertControllerWithTitle:nil
                                           message:nil
@@ -41,10 +48,15 @@
                                       actionWithTitle:@"拍照"
                                       style:UIAlertActionStyleDefault
                                       handler:^(UIAlertAction * _Nonnull action) {
-                                          [self takePhoto];
+                                          UIButton *btn = (UIButton *)sender;
+                                          if (btn.tag == 100) {
+                                              [self takePhotoType:eTakeFrontImage];
+                                          } else {
+                                             [self takePhotoType:eTakeBackImage];
+                                          }
                                       }];
     UIAlertAction *albumAction = [UIAlertAction
-                                      actionWithTitle:@"相册获取"
+                                      actionWithTitle:@"相册"
                                       style:UIAlertActionStyleDefault
                                       handler:^(UIAlertAction * _Nonnull action) {
                                           [self getPickerFromAlbum];
@@ -55,15 +67,25 @@
     [self presentViewController:alertController animated:YES completion:nil];
 }
 
-- (void)takePhoto
+- (void)takePhotoType:(EtakePhotoType)type
 {
     if ([self isAvailableAlbum]) {
-        _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
-        UIView *overlayView = [UIView new];
-        overlayView.backgroundColor = [UIColor redColor];
-        overlayView.frame = CGRectMake(0, 100, 320, 200);
-        _picker.cameraOverlayView = overlayView;
-        [self presentViewController:_picker animated:YES completion:nil];
+//        _picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+//        UIView *overlayView = [UIView new];
+//        overlayView.backgroundColor = [UIColor redColor];
+//        overlayView.frame = CGRectMake(0, 100, 320, 200);
+////        _picker.cameraOverlayView = overlayView;
+//        [self presentViewController:_picker animated:YES completion:nil];
+        HJRTakePhotoController *vc = [[HJRTakePhotoController alloc] init];
+        __weak typeof(self) weakSelf = self;
+        [vc setTakePhotoCompleteBlock:^(NSString *imageFilePath) {
+            if (type == eTakeFrontImage) {
+                [weakSelf.frontImageButton setBackgroundImage:[UIImage imageWithContentsOfFile:imageFilePath] forState:UIControlStateNormal];
+            } else {
+                [weakSelf.backImageButton setBackgroundImage:[UIImage imageWithContentsOfFile:imageFilePath] forState:UIControlStateNormal];
+            }
+        }];
+        [self presentViewController:vc animated:YES completion:nil];
     }
     
 }

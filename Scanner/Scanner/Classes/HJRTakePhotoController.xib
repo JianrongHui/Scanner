@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HJRTakePhotoController">
+            <connections>
+                <outlet property="cameraController" destination="VUo-Fm-i8L" id="bUb-WU-T2s"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUo-Fm-i8L" customClass="IPDFCameraViewController">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xAZ-3J-eeG">
+                            <rect key="frame" x="127" y="356" width="66" height="66"/>
+                            <state key="normal" image="capture_button.png"/>
+                            <connections>
+                                <action selector="cameraButtonAction:" destination="-1" eventType="touchUpInside" id="Z7F-nx-B3k"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcY-Jc-Bwq">
+                            <rect key="frame" x="140" y="442" width="40" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="Rs5-L7-vn1"/>
+                            </constraints>
+                            <state key="normal" title="滤镜"/>
+                            <connections>
+                                <action selector="filterButton:" destination="-1" eventType="touchUpInside" id="Uh5-cZ-14W"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fac-te-ZGS">
+                            <rect key="frame" x="252" y="442" width="60" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="bjJ-5z-S0q"/>
+                            </constraints>
+                            <state key="normal" title="自动识别"/>
+                            <connections>
+                                <action selector="borderDetectButton:" destination="-1" eventType="touchUpInside" id="gza-ib-zex"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fUW-Od-T5W">
+                            <rect key="frame" x="237" y="15" width="60" height="60"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="60" id="6is-Jv-7An"/>
+                                <constraint firstAttribute="width" constant="60" id="ioa-ld-IP3"/>
+                            </constraints>
+                            <state key="normal" title="取消"/>
+                            <connections>
+                                <action selector="cancelButtonAction:" destination="-1" eventType="touchUpInside" id="xEG-92-ids"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EHQ-Ql-Zha">
+                            <rect key="frame" x="8" y="442" width="45" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="45" id="MGs-85-7RM"/>
+                                <constraint firstAttribute="height" constant="30" id="a1J-Ch-7Sr"/>
+                            </constraints>
+                            <state key="normal" title="闪关灯"/>
+                            <connections>
+                                <action selector="torchButton:" destination="-1" eventType="touchUpInside" id="Jjc-RR-qNt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="EHQ-Ql-Zha" secondAttribute="bottom" constant="8" id="1qr-ft-jy5"/>
+                        <constraint firstItem="EHQ-Ql-Zha" firstAttribute="leading" secondItem="VUo-Fm-i8L" secondAttribute="leading" constant="8" id="4aN-1B-gjM"/>
+                        <constraint firstAttribute="trailing" secondItem="fac-te-ZGS" secondAttribute="trailing" constant="8" id="7rL-lT-Tue"/>
+                        <constraint firstAttribute="bottom" secondItem="HcY-Jc-Bwq" secondAttribute="bottom" constant="8" id="DhN-ev-o9l"/>
+                        <constraint firstItem="xAZ-3J-eeG" firstAttribute="centerX" secondItem="VUo-Fm-i8L" secondAttribute="centerX" id="X9E-FJ-9do"/>
+                        <constraint firstItem="HcY-Jc-Bwq" firstAttribute="centerX" secondItem="VUo-Fm-i8L" secondAttribute="centerX" id="f84-9u-c2f"/>
+                        <constraint firstItem="HcY-Jc-Bwq" firstAttribute="top" secondItem="xAZ-3J-eeG" secondAttribute="bottom" constant="20" id="ga2-gj-W9K"/>
+                        <constraint firstAttribute="trailing" secondItem="fUW-Od-T5W" secondAttribute="trailing" constant="23" id="hcs-uU-gMC"/>
+                        <constraint firstAttribute="bottom" secondItem="fac-te-ZGS" secondAttribute="bottom" constant="8" id="hnG-Dt-peq"/>
+                        <constraint firstItem="fUW-Od-T5W" firstAttribute="top" secondItem="VUo-Fm-i8L" secondAttribute="top" constant="15" id="kZb-ny-0Uc"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="VUo-Fm-i8L" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="BDK-nl-k6P"/>
+                <constraint firstItem="VUo-Fm-i8L" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Hg8-Y4-cc1"/>
+                <constraint firstAttribute="bottom" secondItem="VUo-Fm-i8L" secondAttribute="bottom" id="kRW-ug-v28"/>
+                <constraint firstAttribute="trailing" secondItem="VUo-Fm-i8L" secondAttribute="trailing" id="m7y-1V-YmK"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="244" y="243"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="capture_button.png" width="66" height="66"/>
+    </resources>
+</document>
