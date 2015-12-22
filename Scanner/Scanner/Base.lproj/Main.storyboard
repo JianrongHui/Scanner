@@ -24,26 +24,26 @@
                                     <constraint firstAttribute="height" constant="5" id="dEL-zM-J9N"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-NQ-fRb">
+                            <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3S-NQ-fRb">
                                 <rect key="frame" x="60" y="131" width="200" height="120"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="ere-22-oLo"/>
                                     <constraint firstAttribute="height" constant="120" id="q3C-1q-1kz"/>
                                 </constraints>
-                                <state key="normal" title="获取身份正面照"/>
+                                <state key="normal" image="carda.jpg"/>
                                 <connections>
                                     <action selector="firstButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="YVL-ye-Mrz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifs-WM-2LB">
+                            <button opaque="NO" tag="200" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ifs-WM-2LB">
                                 <rect key="frame" x="60" y="316" width="200" height="120"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="lI9-CH-ZpO"/>
                                     <constraint firstAttribute="height" constant="120" id="mXN-fG-df6"/>
                                 </constraints>
-                                <state key="normal" title="获取身份反面照"/>
+                                <state key="normal" image="cardb.jpg"/>
                                 <connections>
                                     <action selector="firstButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V8H-l7-Eab"/>
                                 </connections>
@@ -71,4 +71,8 @@
             <point key="canvasLocation" x="280" y="296"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="carda.jpg" width="419" height="261"/>
+        <image name="cardb.jpg" width="1039" height="685"/>
+    </resources>
 </document>

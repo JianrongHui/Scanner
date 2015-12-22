@@ -29,6 +29,8 @@
 		5BE598E51C230117004FF74A /* ThumbsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE598D01C230117004FF74A /* ThumbsViewController.m */; };
 		5BE598E61C230117004FF74A /* UIXToolbarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE598D21C230117004FF74A /* UIXToolbarView.m */; };
 		5BE598E91C2307D9004FF74A /* PDFImageConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BE598E71C2307D9004FF74A /* PDFImageConverter.m */; };
+		5BE8910F1C292B1B0000E45A /* carda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5BE8910E1C292B1B0000E45A /* carda.jpg */; };
+		5BE891111C292B200000E45A /* cardb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 5BE891101C292B200000E45A /* cardb.jpg */; };
 		DD9CBF911C21C006009C3C34 /* IPDFCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9CBF901C21C006009C3C34 /* IPDFCameraViewController.m */; };
 		DD9CBF991C21C0C3009C3C34 /* HJRTakePhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD9CBF971C21C0C3009C3C34 /* HJRTakePhotoController.m */; };
 		DD9CBF9A1C21C0C3009C3C34 /* HJRTakePhotoController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD9CBF981C21C0C3009C3C34 /* HJRTakePhotoController.xib */; };
@@ -105,6 +107,8 @@
 		5BE598D21C230117004FF74A /* UIXToolbarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIXToolbarView.m; sourceTree = "<group>"; };
 		5BE598E71C2307D9004FF74A /* PDFImageConverter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PDFImageConverter.m; sourceTree = "<group>"; };
 		5BE598E81C2307D9004FF74A /* PDFImageConverter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PDFImageConverter.h; sourceTree = "<group>"; };
+		5BE8910E1C292B1B0000E45A /* carda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = carda.jpg; sourceTree = "<group>"; };
+		5BE891101C292B200000E45A /* cardb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cardb.jpg; sourceTree = "<group>"; };
 		DD9CBF8F1C21C006009C3C34 /* IPDFCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPDFCameraViewController.h; sourceTree = "<group>"; };
 		DD9CBF901C21C006009C3C34 /* IPDFCameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPDFCameraViewController.m; sourceTree = "<group>"; };
 		DD9CBF961C21C0C3009C3C34 /* HJRTakePhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HJRTakePhotoController.h; sourceTree = "<group>"; };
@@ -279,6 +283,8 @@
 		DDD588A61C2066C4003C5688 /* Scanner */ = {
 			isa = PBXGroup;
 			children = (
+				5BE891101C292B200000E45A /* cardb.jpg */,
+				5BE8910E1C292B1B0000E45A /* carda.jpg */,
 				5BE598061C22F082004FF74A /* Utilities */,
 				DD9CBF921C21C04F009C3C34 /* Classes */,
 				DD9CBF781C21BFBE009C3C34 /* thirdLibrary */,
@@ -429,10 +435,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				DDD588B71C2066C4003C5688 /* LaunchScreen.storyboard in Resources */,
+				5BE8910F1C292B1B0000E45A /* carda.jpg in Resources */,
 				DDD588B41C2066C4003C5688 /* Assets.xcassets in Resources */,
 				DD9CBF9A1C21C0C3009C3C34 /* HJRTakePhotoController.xib in Resources */,
 				DD9CBF9D1C21C26E009C3C34 /* capture_button@2x.png in Resources */,
 				DDD588B21C2066C4003C5688 /* Main.storyboard in Resources */,
+				5BE891111C292B200000E45A /* cardb.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

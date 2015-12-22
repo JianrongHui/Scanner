@@ -24,6 +24,11 @@ NSString *const kPDFFilePath = @"testPDF";
 
 @implementation HJRTakePhotoController
 
+- (void)dealloc
+{
+    
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 
@@ -80,22 +85,40 @@ NSString *const kPDFFilePath = @"testPDF";
           {
               captureImageView.frame = weakSelf.view.bounds;
           } completion:nil];
+         
+//         // 删除按钮
+//         UIButton *okButton = [UIButton buttonWithType:0];
+//         [okButton setTitle:@"删除" forState:UIControlStateNormal];
+//         CGFloat  okX = 50;
+//         CGFloat okY = self.view.frame.size.height - 80;
+//         okButton.frame = CGRectMake(okX, okY, 60, 30);
+//         [weakSelf.view addSubview:okButton];
+//         okButton.tag = 1000;
+//         [okButton addTarget:weakSelf action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
+         
+         // 保存按钮
+         UIButton *okButton1 = [UIButton buttonWithType:0];
+         okButton1.backgroundColor = [UIColor yellowColor];
+         [okButton1 setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
+         [okButton1 setTitle:@"保存" forState:UIControlStateNormal];
+         CGFloat  okX1 = self.view.frame.size.width-50-60;
+         CGFloat okY1 = self.view.frame.size.height - 80;
+         okButton1.frame = CGRectMake(okX1, okY1, 60, 30);
+         [weakSelf.view addSubview:okButton1];
+         okButton1.tag = 2000;
+          [okButton1 addTarget:weakSelf action:@selector(buttonAction:) forControlEvents:UIControlEventTouchUpInside];
      }];
 }
 
+- (void)buttonAction:(UIButton *)sender
+{
+    NSUserDefaults *user = [NSUserDefaults standardUserDefaults];
+    [user setObject:_imagePath forKey:@"imagepath"];
+    [user synchronize];
+}
+
 - (IBAction)cancelButtonAction:(id)sender {
-//    [self dismissViewControllerAnimated:YES completion:nil];
-    
-    
-    ReaderDocument *document = [ReaderDocument withDocumentFilePath:[self pdfDestPath:kPDFFilePath] password:nil];
-    if (document) {
-        ReaderViewController *readVC = [[ReaderViewController alloc] initWithReaderDocument:document];
-        readVC.delegate = self;
-        readVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        readVC.modalPresentationStyle = UIModalPresentationFullScreen;
-        [self presentViewController:readVC animated:YES completion:NULL];
-    }
-    
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (NSString *)pdfDestPath:(NSString *)filename
@@ -112,19 +135,6 @@ NSString *const kPDFFilePath = @"testPDF";
                      completion:^(BOOL finished)
      {
          [dismissTap.view removeFromSuperview];
-         
-         NSData *imageData = [PDFImageConverter convertImageToPDF:[UIImage imageWithContentsOfFile:_imagePath]];
-//         [PDFImageConverter
-//                              convertImageToPDF:[UIImage imageWithContentsOfFile:_imagePath]
-//                              withResolution:100
-//                              maxBoundsRect:CGRectMake(200, 200, 200, 200)
-//                              pageSize:CGSizeMake(600, 600)
-//                              ];
-         if (imageData) {
-             [PDFManager CreatePDFFileWithImageData:imageData toDestFile:kPDFFilePath withPassword:nil];
-             
-         }
-         
      }];
 }
 
