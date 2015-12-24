@@ -7,10 +7,13 @@
 //
 
 #import "HJRMainController.h"
+#import "HJRMainTableViewCell.h"
+#import "HJRMainCellModel.h"
+#import "ScannerConfig.h"
+#import "HJRTakePhotoController.h"
 
 NSString *const kTableViewCellId = @"tableViewCellId";
-
-@interface HJRMainController ()<UITableViewDelegate,UITableViewDataSource>
+@interface HJRMainController ()<UITableViewDelegate,UITableViewDataSource,SWTableViewCellDelegate>
 
 @property (nonatomic, strong) UITableView *contentTableView;
 @property (nonatomic, strong) NSMutableArray *dataArray;
@@ -25,6 +28,8 @@ NSString *const kTableViewCellId = @"tableViewCellId";
     
     self.dataArray = @[].mutableCopy;
     [self creatTestData];
+    
+    
     
     [self setUpNavigationBar];
     [self setUpContentTableView];
@@ -45,17 +50,8 @@ NSString *const kTableViewCellId = @"tableViewCellId";
 - (void)setUpNavigationBar
 {
     self.title = @"我的文件";
-    
-    UIButton *leftBtn = [UIButton buttonWithType:0];
-    leftBtn.frame = CGRectMake(0, 0, 80, 60);
-    [leftBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [leftBtn setTitle:@"编辑" forState:UIControlStateNormal];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftBtn];
-
-    UIButton *rightBtn = [UIButton buttonWithType:0];
-    rightBtn.frame = CGRectMake(0, 0, 80, 60);
-    [rightBtn setTitleColor:[UIColor blueColor] forState:UIControlStateNormal];
-    [rightBtn setImage:[UIImage imageNamed:@"add_button"] forState:UIControlStateNormal];
+    [self creatLeftBarButtonWithTitle:@"编辑" imageName:nil];
+    [self creatRightBarButtonWithTitle:nil imageName:@"add_button"];
 }
 
 - (void)setUpContentTableView
@@ -66,6 +62,22 @@ NSString *const kTableViewCellId = @"tableViewCellId";
     self.contentTableView.delegate = self;
     self.contentTableView.dataSource = self;
     [self.view addSubview:self.contentTableView];
+}
+
+#pragma mark - super
+- (void)leftBarButtonAction:(UIButton *)sender
+{
+
+}
+
+- (void)rightBarButtonAction:(UIButton *)sender
+{
+    HJRTakePhotoController *vc = [[HJRTakePhotoController alloc] init];
+    [vc setTakePhotoCompleteBlock:^(NSString *imagePath) {
+        
+    }];
+    [self presentViewController:vc animated:YES completion:nil];
+//    [self.navigationController pushViewController:vc animated:YES];
 }
 
 #pragma mark - UITableViewDelegate | UITableViewDataSource
@@ -82,16 +94,42 @@ NSString *const kTableViewCellId = @"tableViewCellId";
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellId];
-    if (cell  == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kTableViewCellId];
+    HJRMainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:kTableViewCellId];
+    
+    if (cell == nil) {
+        cell = [[HJRMainTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:kTableViewCellId];
+        cell.rightUtilityButtons = [self rightButtons];
+        cell.leftUtilityButtons  = [self leftButtons];
+        cell.delegate = self;
     }
-    cell.imageView.image = [UIImage imageNamed:@""];
-    cell.textLabel.text = @"发给学校的身份证";
-    cell.detailTextLabel.text = @"2015-12-24";
+    cell.delegate = self;
+    HJRMainCellModel *model = [[HJRMainCellModel alloc] init];
+    model.cellTitle = @"发给学校的身份证";
+    model.cellSubTitle = @"2015-12-25";
+    model.imageName = @"fileImage";
+    [cell configDataSource:model];
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
 
-
+- (NSArray *)rightButtons
+{
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:HEXCOLOR(0xfe3b30)
+                                                title:@"删除"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:HEXCOLOR(0xff9500)
+                                                title:@"置顶"];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:HEXCOLOR(0x666666)
+                                                title:@"重命名"];
+    return rightUtilityButtons;
+}
+- (NSArray *)leftButtons
+{
+    NSMutableArray *leftUtilityButtons = [NSMutableArray new];
+    [leftUtilityButtons sw_addUtilityButtonWithColor:[UIColor whiteColor]
+                                          normalIcon:[UIImage imageNamed:@"add_button"]
+                                        selectedIcon:[UIImage imageNamed:@"add_button"]];
+    return leftUtilityButtons;
+}
 
 @end

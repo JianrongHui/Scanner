@@ -10,8 +10,10 @@
 
 @interface HJRBaseController : UIViewController
 
-
 - (void)creatLeftBarButtonWithTitle:(NSString *)title imageName:(NSString *)image;
 - (void)creatRightBarButtonWithTitle:(NSString *)title imageName:(NSString *)image;
+
+- (void)leftBarButtonAction:(UIButton *)sender;
+- (void)rightBarButtonAction:(UIButton *)sender;
 
 @end

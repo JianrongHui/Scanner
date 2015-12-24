@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-@interface HJRTakePhotoController : UIViewController
+#import "HJRBaseController.h"
+@interface HJRTakePhotoController : HJRBaseController
 
-@property (nonatomic, copy) void (^takePhotoCompleteBlock) (NSString *);
+@property (nonatomic, copy) void (^takePhotoCompleteBlock) (NSString *imagePath);
 
 @end

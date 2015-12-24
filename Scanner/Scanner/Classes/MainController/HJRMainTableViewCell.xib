@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HJRMainTableViewCell" rowHeight="86" id="KGk-i7-Jjw" customClass="HJRMainTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="333" height="88"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="333" height="87"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6IE-EF-FyW">
+                        <rect key="frame" x="15" y="8" width="71" height="71"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="85" id="TH0-Nf-Wmh"/>
+                            <constraint firstAttribute="width" secondItem="6IE-EF-FyW" secondAttribute="height" multiplier="1:1" id="keW-G6-qDD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="TH0-Nf-Wmh"/>
+                            </mask>
+                        </variation>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发给公司的社保卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tNg-UC-oPP">
+                        <rect key="frame" x="101" y="22" width="217" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发给公司的社保卡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0TS-S4-WK0">
+                        <rect key="frame" x="103" y="50" width="215" height="15"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tNg-UC-oPP" firstAttribute="leading" secondItem="6IE-EF-FyW" secondAttribute="trailing" constant="15" id="665-EB-Vav"/>
+                    <constraint firstAttribute="trailing" secondItem="0TS-S4-WK0" secondAttribute="trailing" constant="15" id="72K-Xf-Z47"/>
+                    <constraint firstItem="tNg-UC-oPP" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="22" id="7YE-D8-JMK"/>
+                    <constraint firstItem="6IE-EF-FyW" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="AeO-ys-Weo"/>
+                    <constraint firstAttribute="bottom" secondItem="6IE-EF-FyW" secondAttribute="bottom" constant="8" id="Fvt-jN-g6U"/>
+                    <constraint firstItem="6IE-EF-FyW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="T3E-FP-zEH"/>
+                    <constraint firstAttribute="trailing" secondItem="tNg-UC-oPP" secondAttribute="trailing" constant="15" id="aXq-HR-Gd6"/>
+                    <constraint firstItem="0TS-S4-WK0" firstAttribute="leading" secondItem="6IE-EF-FyW" secondAttribute="trailing" constant="17" id="jQ9-A9-csH"/>
+                    <constraint firstItem="0TS-S4-WK0" firstAttribute="top" secondItem="tNg-UC-oPP" secondAttribute="bottom" constant="10" id="xwH-6p-k7v"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="cellFirstLabel" destination="tNg-UC-oPP" id="eYa-g1-gBx"/>
+                <outlet property="cellImageView" destination="6IE-EF-FyW" id="WDe-FP-VCF"/>
+                <outlet property="cellSecondLabel" destination="0TS-S4-WK0" id="mqs-fm-ee8"/>
+            </connections>
+            <point key="canvasLocation" x="301.5" y="370"/>
+        </tableViewCell>
+    </objects>
+</document>

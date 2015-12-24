@@ -148,7 +148,10 @@ NSString *const kPDFFilePath = @"testPDF";
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
-#pragma mark =============================
-
+#pragma mark - other
+- (BOOL)prefersStatusBarHidden
+{
+    return YES;
+}
 
 @end
