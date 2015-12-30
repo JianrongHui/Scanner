@@ -30,8 +30,8 @@
 - (void)setTitle:(NSString *)title
 {
     UILabel *titleLabel = [UILabel new];
-    titleLabel.frame = CGRectMake(0, 0, 500, 40);
-//    titleLabel.backgroundColor = [UIColor yellowColor];
+    titleLabel.frame = CGRectMake(0, 0, 500, 44.0);
+    titleLabel.backgroundColor = [UIColor yellowColor];
     titleLabel.textAlignment = NSTextAlignmentCenter;
     titleLabel.font = [UIFont systemFontOfSize:16.0f];
     titleLabel.textColor = [UIColor blackColor];
